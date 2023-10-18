@@ -19,4 +19,17 @@ class PostmanEchoTest {
                 .statusCode(200)
                 .body("data", equalTo("Hello"));
     }
+
+    @Test
+    void shouldReturnSendDataNegativeTest() {
+
+        given()
+                .baseUri("https://postman-echo.com")
+                .body("Good morning")
+                .when()
+                .post("/post")
+                .then()
+                .statusCode(200)
+                .body("data", equalTo("Hello"));
+    }
 }
